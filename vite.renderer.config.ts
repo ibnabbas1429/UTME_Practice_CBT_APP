@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     outDir: '.vite/renderer/main_window',
     rollupOptions: {
-      input: path.resolve(__dirname, 'src/renderer/index.html'),
+      input: path.resolve(__dirname, 'src/renderer/iindex.html'),
     },
   },
 });

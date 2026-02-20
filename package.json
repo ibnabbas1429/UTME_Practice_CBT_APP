@@ -2,7 +2,7 @@
   "name": "utme-cbt-system",
   "version": "1.0.0",
   "description": "UTME Practice Computer Based Test Examination System",
-  "main": ".vite/build/main.js",
+  "main": ".vite/build/index.js",
   "author": "Emaculate Digital Technologies",
   "license": "MIT",
   "scripts": {

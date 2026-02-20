@@ -1,6 +1,6 @@
 import { getDatabase } from '@/database';
 import { Question } from '@/shared/types/exam.types';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 
 export class QuestionService {
   private db = getDatabase();
@@ -13,7 +13,7 @@ export class QuestionService {
   }
 
   async addQuestion(question: Omit<Question, 'id' | 'createdAt'>): Promise<Question> {
-    const id = uuidv4();
+    const id = randomUUID();
     this.db
       .prepare(
         `INSERT INTO questions (id, exam_id, subject, question, option_a, option_b, 

@@ -1,6 +1,6 @@
 import { getDatabase } from '@/database';
 import { Exam, ExamSession, ExamResult } from '@/shared/types/exam.types';
-import { v4 as uuidv4 } from 'uuid';
+import { randomUUID } from 'crypto';
 
 export class ExamService {
   private db = getDatabase();
@@ -33,7 +33,7 @@ export class ExamService {
     }
 
     // Create new session
-    const sessionId = uuidv4();
+    const sessionId = randomUUID();
     this.db
       .prepare(
         `INSERT INTO exam_sessions (id, exam_id, user_id, status, answers)
@@ -112,7 +112,7 @@ export class ExamService {
     });
 
     // Save result
-    const resultId = uuidv4();
+    const resultId = randomUUID();
     this.db
       .prepare(
         `INSERT INTO exam_results 

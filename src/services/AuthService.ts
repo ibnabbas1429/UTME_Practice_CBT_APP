@@ -1,6 +1,5 @@
 import { getDatabase } from '@/database';
 import { User, AuthResponse, UserRegistration } from '@/shared/types/user.types';
-import { v4 as uuidv4 } from 'uuid';
 import * as crypto from 'crypto';
 
 export class AuthService {
@@ -41,7 +40,7 @@ export class AuthService {
       throw new Error('Username or email already exists');
     }
 
-    const userId = uuidv4();
+    const userId = crypto.randomUUID();
     const hashedPassword = this.hashPassword(userData.password);
 
     this.db

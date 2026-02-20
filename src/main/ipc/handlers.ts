@@ -1,7 +1,7 @@
 import { IpcMain, BrowserWindow } from 'electron';
 import { IpcChannels } from './channels';
 import { AuthService } from '@/services/AuthService';
-import { ExamService } from '@/services/ExamService';
+import { ExamService } from '@/services/ExamServices';
 import { QuestionService } from '@/services/QuestionService';
 import { ResultService } from '@/services/ResultService';
 import { enableExamMode } from '../index';
